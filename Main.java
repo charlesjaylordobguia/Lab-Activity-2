@@ -1,36 +1,40 @@
 public class Main {
 
+    public static void printDetails(Vehicle vehicle){
+    vehicle.displayInfo();
+    }
 	public static void main(String[] args) {
 		
-		Vehicle vehicle1 = new Vehicle("Toyota", "Vios", 2020);
-        Vehicle vehicle2 = new Vehicle("Honda", "Civic", 1995);
-        Vehicle vehicle3 = new Vehicle("Mitsubishi", "Lancer", 2010);
+        System.out.println("===1. Parent Reference ===");
+		Vehicle vehicle = new Car("Toyota", "Vios", 2020,4);
+        vehicle.displayInfo();
 
+        vehicle = new Motorcycle ("Kawasaki"," Ninja H2 Carbon",2017, "998cc, liquid-cooled, 4-stroke, in-line four-cylinder supercharged gasoline engine");
+        vehicle.displayInfo();
 
-	    vehicle1.displayInfo();
-        System.out.println("get brand: " + vehicle1.getBrand());
-        System.out.println("get model: " + vehicle1.getModel());
-        System.out.println("get year: " + vehicle1.getYear());
-        System.out.println("Age: " + vehicle1.calculateAge());
-        System.out.println("Vintage: " + vehicle1.isVintage());
+        Truck truck = new Truck ("Mitsubishi", "Mitsubishi Strada / L200",1978,4);
+        truck.displayInfo();
+
+        System.out.println("\n=== 2. Method Parameter ===");
+        Car Car = new Car("Honda", "Civic",1995,4);
+        Motorcycle Motor = new Motorcycle("Honda", "CB750 Hornet",2022, "4-stroke, DOHC, 4-cylinder, liquid-cooled engine");
+        Truck Truck = new Truck ("Hyundai","Santa Cruz",2021,4);
+        printDetails(Car);
+        printDetails(Motor);
+        printDetails(Truck);
         
-        vehicle2.displayInfo();
-        System.out.println("get brand: " + vehicle2.getBrand());
-        System.out.println("get model: " + vehicle2.getModel());
-        System.out.println("get year: " + vehicle2.getYear());
-        System.out.println("Age: " + vehicle2.calculateAge());
-        System.out.println("Vintage: " + vehicle2.isVintage());
-        
-        vehicle3.displayInfo();
-        System.out.println("get brand: " + vehicle3.getBrand());
-        System.out.println("get model: " + vehicle3.getModel());
-        System.out.println("get year: " + vehicle3.getYear());
-        System.out.println("Age: " + vehicle3.calculateAge());
-        System.out.println("Vintage: " + vehicle3.isVintage());
-	    
+        System.out.println("\n=== 3.Polymorphic Array ===");
+        Vehicle[] vehicles = {
+            new Car("Mitsubishi", "Lancer", 2010,4),
+            new Motorcycle("Yamaha","YZF-R1M",2015, "998cc liquid-cooled, 4-stroke, DOHC,inline 4-cylinder engine featuring a crossplane crankshaft (CP4) technology"),
+            new Truck ("Hyundai","Santa Cruz",2021,4)
+        };
 
-
-        
+        for(Vehicle currentVehicle: vehicles){
+            printDetails(currentVehicle);
+        }
+        System.out.println();
     }
+}    
 
-}
+	    
