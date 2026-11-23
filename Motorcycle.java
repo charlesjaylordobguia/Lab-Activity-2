@@ -1,27 +1,34 @@
-public class Motorcycle extends Vehicle {
-    String enginetype;
+public class Motorcycle extends Vehicle implements Serviceable {
+   private String enginetype;
 
-    public Motorcycle(String brand, String model, int year, String enginetype){
-        super(brand,model,year);
-        this.enginetype = enginetype;
-    }
+   public Motorcycle(String brand, String model, int year, String enginetype) {
+      super(brand, model, year);
+      this.enginetype = enginetype;
+   }
 
-    @Override
-    public void displayInfo(){
-        super.displayInfo();
-        System.out.println("Engine Type: " + enginetype );
-    }
+   @Override
+   public void displayInfo() {
+      super.displayInfo();
+      System.out.println("Engine Type: " + enginetype);
+   }
 
-    public void moveForward(){
-        System.out.println("Motorcycle is moving Forward.");
-    }
-    public void moveBackward(){
-        System.out.println("Motorcycle is moving Backward.");
-    }
-    public void moveLeft(){
-        System.out.println("Motorcycle is turning Left.");
-    }
-    public void moveRight(){
-        System.out.println("Motorcycle is turning Right.");
-    }
+   public void moveForward() {
+      System.out.println("Motorcycle is moving Forward.");
+   }
+
+   public void moveBackward() {
+      System.out.println("Motorcycle is moving Backward.");
+   }
+
+   public void moveLeft() {
+      System.out.println("Motorcycle is turning Left.");
+   }
+
+   public void moveRight() {
+      System.out.println("Motorcycle is turning Right.");
+   }
+
+   public void service() {
+      System.out.println("The Motorcycle is Being Serviced");
+   }
 }

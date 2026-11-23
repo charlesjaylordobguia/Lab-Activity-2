@@ -1,32 +1,35 @@
-public class Car extends Vehicle{
+public class Car extends Vehicle implements Serviceable {
     int numberofDoors;
 
-public Car(String brand, String model, int year,int numberofDoors){
-    super(brand,model,year);
-    this.numberofDoors = numberofDoors;
-}
+    public Car(String brand, String model, int year, int numberofDoors) {
+        super(brand, model, year);
+        this.numberofDoors = numberofDoors;
+    }
 
     @Override
-   public void displayInfo(){
+    public void displayInfo() {
         super.displayInfo();
         System.out.println("numberofDoors: " + numberofDoors);
 
     }
 
-    public void moveForward(){
+    public void moveForward() {
         System.out.println("Car is moving Forward.");
     }
 
-    public void moveBackward(){
+    public void moveBackward() {
         System.out.println("Car is moving Backward.");
     }
 
-    public void moveLeft(){
+    public void moveLeft() {
         System.out.println("Car is Turning Left.");
     }
 
-    public void moveRight(){
+    public void moveRight() {
         System.out.println("Car is Turning Right");
     }
-}
 
+    public void service() {
+        System.out.println("Car: Check the Oil and the Brakes");
+    }
+}
